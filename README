@@ -4,4 +4,5 @@
 * Includes Unit tests (using Hamcrest and Mockito)
 *
 * Feel free to copy and use as needed
-* 
+*
+* For more support when using multiple RSA keys: http://help.github.com/multiple-ssh-keys/
