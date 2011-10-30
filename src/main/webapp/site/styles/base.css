@@ -1,3 +1,24 @@
-h1 {
-    border-bottom: 1px solid #cccccc;
+div.push-4 + div.pull-20 {
+    margin-left: -790px;
+}
+
+#twitter-result {
+    margin-top: 40px;
+}
+
+.result {
+    margin-bottom: 20px;
+}
+
+#header {
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #cccccc;
+    padding: 10px 0;
+}
+
+#footer {
+    border-top: 1px dotted #cccccc;
+    padding: 10px 0;
+    margin-top: 5px;
+    text-align: center;
 }

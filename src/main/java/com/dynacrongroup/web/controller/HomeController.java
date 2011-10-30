@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/")
 /**
  * Home Controller sample
  *
@@ -30,6 +30,11 @@ public class HomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String showHomePage() {
         return "home/home";
+    }
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String redirectToHome() {
+        return "redirect:/";
     }
 
     @RequestMapping(value = "/exception", method = RequestMethod.GET)

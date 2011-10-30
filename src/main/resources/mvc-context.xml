@@ -27,12 +27,12 @@
         <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
 
-    <!-- store preferred language configuration in a cookie -->
-    <bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver" id="localeResolver" p:cookieName="locale"/>
+    <!-- Grab locale from accepts header-->
+    <bean class="org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver" id="localeResolver"/>
 
     <!-- Spring Interceptors for locale -->
     <mvc:interceptors>
-        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="locale"/>
     </mvc:interceptors>
 
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>

@@ -6,11 +6,9 @@
                            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
                            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
 
-    <!--<context:annotation-config/>-->
-
-    <jee:jndi-lookup jndi-name="param/environment" id="environment" expected-type="java.lang.String"/>
-
     <bean id="objectMapper" class="org.codehaus.jackson.map.ObjectMapper"/>
 
+    <!-- contents should be in this file only, but externalizing for demo purposes -->
+    <import resource="classpath:configuration-sample-context.xml"/>
 
 </beans>
