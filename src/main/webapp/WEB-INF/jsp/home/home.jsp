@@ -16,5 +16,13 @@
             Praesent lectus tellus, egestas non elementum pharetra, euismod id arcu. In ipsum odio, mattis quis faucibus a, sagittis et augue. Suspendisse nibh risus, mollis ac tempus ut, suscipit rutrum nisi. Aliquam rhoncus facilisis tellus, in euismod nunc consequat vel. Pellentesque facilisis scelerisque dolor, ut fermentum felis imperdiet in. Nam blandit elementum nibh ac eleifend. Nulla lacinia condimentum nulla, ac adipiscing lectus cursus et. Sed sagittis sollicitudin arcu porttitor
             pretium. Vivamus at augue eu enim vulputate consectetur nec ac orci. Sed sed neque enim, id sollicitudin mauris. Mauris leo nunc, dictum nec suscipit sed, dictum nec nulla. Aliquam ante felis, laoreet at pretium consectetur, ullamcorper eget mauris. Vivamus a arcu nec odio elementum malesuada id vitae nisl.
         </p>
+
+        <p>
+            <a href="${pageContext.request.contextPath}/home/exception">Throw exception and catch in Spring Container</a>
+        </p>
+
+        <p>
+            <a href="${pageContext.request.contextPath}/home/exception-and-catch">Throw exception and catch in Controller</a>
+        </p>
     </body>
 </html>
