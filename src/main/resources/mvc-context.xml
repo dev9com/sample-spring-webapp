@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+    <!-- Message sources used for Message Bundles providing Localization and messages in views -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basenames="com/dynacrongroup/web/messages/messages"/>
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <!-- Converters go here...these are used instead of PropertyEditors, though, need one class for to and from string, kind of a pain...good idea to write a static factory -->
+            </set>
+        </property>
+    </bean>
+
+    <!-- Pickup @Controller annotations -->
+    <context:component-scan base-package="com.dynacrongroup.web">
+        <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+    </context:component-scan>
+
+    <!-- store preferred language configuration in a cookie -->
+    <bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver" id="localeResolver" p:cookieName="locale"/>
+
+    <!-- Spring Interceptors for locale -->
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
+    </mvc:interceptors>
+
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+
+    <!-- Turns on support for mapping requests to Spring MVC @Controller methods
+         Also registers default Formatters and Validators for use across all @Controllers -->
+    <mvc:annotation-driven validator="validator" conversion-service="conversionService"/>
+
+    <!-- This bean resolves specific types of exceptions to corresponding logical - view names for error views.
+         The default behaviour of DispatcherServlet - is to propagate all exceptions to the servlet container:
+         this will happen - here with all other types of exceptions. -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" p:defaultErrorView="uncaughtException">
+        <property name="exceptionMappings">
+            <props>
+                <prop key=".SimpleKnownRunTimeException">errors/simpleRuntimeException</prop>
+            </props>
+        </property>
+    </bean>
+
+
+</beans>

@@ -10,11 +10,17 @@
 
     <context:annotation-config/>
 
-    <context:component-scan base-package="com.dynacrongroup"/>
+    <!-- This allows spring to locate any @Component, @Service, @Repository classes, instanciate them
+        and set them for use in @Autowiring.  In addition, @PostConstruct and other Spring supported JSR 250
+        annotations are used in this process -->
+    <context:component-scan base-package="com.dynacrongroup.web">
+        <!-- Controllers are ignored in lew of <mvc> configuration -->
+        <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
+    </context:component-scan>
 
-    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>-->
 
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+    <!--<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>-->
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
