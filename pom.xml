@@ -550,7 +550,7 @@
         <!-- AOP dependency -->
         <dependency>
             <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
+            <artifactId>cglib-nodep</artifactId>
             <version>2.2.2</version>
         </dependency>
         <!-- END Spring -->

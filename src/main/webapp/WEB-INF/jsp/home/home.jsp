@@ -29,5 +29,11 @@
         <p>
             <a href="${pageContext.request.contextPath}/exception-and-catch"><spring:message code="home.exception.second"/></a>
         </p>
+
+        <h2>@Configuration bean example</h2>
+
+        <p>
+            App Name: ${appName}, App Version: ${appVersion}
+        </p>
     </body>
 </html>
