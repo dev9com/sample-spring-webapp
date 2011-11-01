@@ -47,6 +47,16 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/undecorated", method = RequestMethod.GET)
+    public String undecoratedPage() {
+        return "home/undecorated";
+    }
+
+    @RequestMapping(value = "/person", method = RequestMethod.GET)
+    public String showPersonPage() {
+        return "home/person";
+    }
+
     @RequestMapping(value = "/exception", method = RequestMethod.GET)
     public String throwException() {
         throw new SimpleKnownRunTimeException("This is to simulate a runtime exception");

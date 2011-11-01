@@ -16,9 +16,9 @@
 
         <h3><spring:message code="home.twitter.section.subheader"/></h3>
 
-        <p>
-            <a href="${pageContext.request.contextPath}/twitter/home"><spring:message code="home.twitter.search.link"/></a>
-        </p>
+        <%--<p>--%>
+        <%--<a href="${pageContext.request.contextPath}/twitter/home"><spring:message code="home.twitter.search.link"/></a>--%>
+        <%--</p>--%>
 
         <h2><spring:message code="home.exception.section.header"/></h2>
 
@@ -28,6 +28,12 @@
 
         <p>
             <a href="${pageContext.request.contextPath}/exception-and-catch"><spring:message code="home.exception.second"/></a>
+        </p>
+
+        <h2>Person Pages</h2>
+
+        <p>
+            <a href="${pageContext.request.contextPath}/person">Goto Person Page</a>
         </p>
 
         <h2>@Configuration bean example</h2>
