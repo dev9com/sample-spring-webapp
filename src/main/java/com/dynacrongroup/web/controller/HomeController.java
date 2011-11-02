@@ -33,6 +33,7 @@ public class HomeController {
     /**
      * No additional request value mapping, but forces to only GET requests
      *
+     * @param model Model
      * @return String viewForInternalViewResolver
      */
     @RequestMapping(method = RequestMethod.GET)
