@@ -37,10 +37,14 @@
                 <a href="<spring:message code="decorator.footer.mikesblog.url"/>" target="_blank"><spring:message code="decorator.footer.mikesblog"/></a> |
                 <a href="<spring:message code="decorator.footer.site.url"/>" target="_blank"><spring:message code="decorator.footer.site"/></a>
             </div>
-            <c:set var="passedVar"><decorator:getProperty property="page.myvariable"/></c:set>
-            <c:if test="${not empty passedVar}">
-                You passed '${passedVar}' to the decorator
-            </c:if>
+            <div class="span-24">
+                <div class="small">Request started at: ${requestStarted}</div>
+                <c:set var="passedVar"><decorator:getProperty property="page.myvariable"/></c:set>
+                <c:if test="${not empty passedVar}">
+                    You passed '${passedVar}' to the decorator
+                </c:if>
+            </div>
         </div>
+
     </body>
 </html>
