@@ -13,5 +13,6 @@
             vel nisl. Mauris eros nisl, convallis tempor tristique sed, tempor eget libero. Suspendisse ac nulla sed nisi mattis volutpat accumsan id elit.
         </p>
 
+        <content tag="myvariable">MyVariableThatImPassingToTheDecorator</content>
     </body>
 </html>
