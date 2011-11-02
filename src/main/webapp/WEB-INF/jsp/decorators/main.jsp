@@ -27,15 +27,19 @@
             <div class="span-4 first last pull-20">
                 <ul>
                     <li><a href="${pageContext.request.contextPath}/">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/twitter/home"><spring:message code="home.twitter.section.header"/></a></li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/twitter/home"><spring:message code="home.twitter.section.header"/></a>
+                    </li>
                 </ul>
             </div>
 
             <div class="span-24" id="footer">
                 &copy;2012 |
                 <a href="http://www.dynacrongroup.com" target="_blank">Dynacron Group</a> |
-                <a href="<spring:message code="decorator.footer.mikesblog.url"/>" target="_blank"><spring:message code="decorator.footer.mikesblog"/></a> |
-                <a href="<spring:message code="decorator.footer.site.url"/>" target="_blank"><spring:message code="decorator.footer.site"/></a>
+                <spring:message code="decorator.footer.mikesblog.url" var="blogUrl"/>
+                <spring:message code="decorator.footer.site.url" var="projectUrl"/>
+                <a href="${blogUrl}" target="_blank"><spring:message code="decorator.footer.mikesblog"/></a> |
+                <a href="${projectUrl}" target="_blank"><spring:message code="decorator.footer.site"/></a>
             </div>
             <div class="span-24">
                 <div class="small">Request started at: ${requestStarted}</div>
