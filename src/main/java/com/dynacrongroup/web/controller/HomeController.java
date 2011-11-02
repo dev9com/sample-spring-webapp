@@ -38,7 +38,7 @@ public class HomeController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public String showHomePage(Model model) {
-        model.addAttribute("appName", appService.getName());
+        model.addAttribute("appName", "Mike" + appService.getName());
         model.addAttribute("appVersion", appService.getVersion());
         return "home/home";
     }

@@ -18,6 +18,7 @@
         <property name="converters">
             <set>
                 <!-- Converters go here...these are used instead of PropertyEditors, though, need one class for to and from string, kind of a pain...good idea to write a static factory -->
+                <bean class="com.dynacrongroup.web.converter.SimpleDateStringToDateTimeConverter"/>
             </set>
         </property>
     </bean>
