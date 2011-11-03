@@ -1,6 +1,5 @@
 package com.dynacrongroup.web.controller;
 
-import com.dynacrongroup.web.model.Address;
 import com.dynacrongroup.web.model.Person;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
@@ -18,13 +17,12 @@ public class AjaxControllerTest {
         firstPerson.setFirstName("Mike");
         firstPerson.setLastName("Ensor");
 
-        Address address = new Address("address1", "City", "state", "88888");
-//        firstPerson.setAddress(address);
-
         String serialized = mapper.writeValueAsString(firstPerson);
         assertThat(serialized, notNullValue());
 
         Person person = mapper.readValue(serialized, Person.class);
         assertThat(person.getFirstName(), is(firstPerson.getFirstName()));
     }
+
+
 }
