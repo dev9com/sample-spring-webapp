@@ -18,6 +18,8 @@
 
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp"/>
+          p:suffix=".jsp"
+          p:order="1"
+            />
 
 </beans>
