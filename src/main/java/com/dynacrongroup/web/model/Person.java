@@ -10,6 +10,10 @@ public class Person {
     private String lastName;
     private Address address;
 
+    public Person() {
+        
+    }
+
     public String getFirstName() {
         return firstName;
     }

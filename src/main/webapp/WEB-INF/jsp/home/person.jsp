@@ -22,23 +22,55 @@
         </form>
         <script type="text/javascript">
 
+            $.fn.serializeObject = function() {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+
+
             var addressNameSpace = {};
 
             addressNameSpace.callback = function(data) {
                 var items = [];
 
-                $.each(data, function(key, val) {
-                    items.push('<li id="' + key + '">' + val + '</li>');
-                });
+                items.push('<li id="firstName">' + data.firstName + '</li>');
+                items.push('<li id="lastName">' + data.lastName + '</li>');
+                items.push('<li id="address1">' + data.address.address1 + '</li>');
+                items.push('<li id="city">' + data.address.city + '</li>');
+                items.push('<li id="state">' + data.address.state + '</li>');
+                items.push('<li id="zip">' + data.address.zip + '</li>');
 
+                $('<div/>', {html:"results found:", id:"results", style:"margin-top:20px;"}).appendTo('#address-form fieldset');
                 $('<ul/>', {
                     'class': 'my-new-list',
                     html: items.join('')
-                }).appendTo('body');
+                }).appendTo('#results');
             }
 
             addressNameSpace.getAddress = function() {
-                $.getJSON('/webapp/ajax/person', $("#address-form").serialize(), addressNameSpace.callback);
+
+                var data = $("#address-form").serializeObject();//{"firstName":"mike","lastName":"lastName"};
+
+                $.ajax({
+                    url: '/webapp/ajax/person',
+                    dataType: 'json',
+                    type: 'POST',
+                    data: $.toJSON(data),
+                    processData:false,
+                    contentType:'plain/text',
+                    success: addressNameSpace.callback
+                });
             }
 
             $("#address").click(function(event) {

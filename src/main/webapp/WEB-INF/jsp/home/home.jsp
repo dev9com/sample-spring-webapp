@@ -31,11 +31,11 @@
             <a href="${pageContext.request.contextPath}/exception-and-catch"><spring:message code="home.exception.second"/></a>
         </p>
 
-        <%--<h2>Person Pages</h2>--%>
+        <h2>Person Pages</h2>
 
-        <%--<p>--%>
-            <%--<a href="${pageContext.request.contextPath}/person">Goto Person Page</a>--%>
-        <%--</p>--%>
+        <p>
+            <a href="${pageContext.request.contextPath}/person">Goto Person Page</a>
+        </p>
 
         <h2>Sitemesh examples</h2>
         <a href="${pageContext.request.contextPath}/undecorated">Undecorated Page (by default)</a>

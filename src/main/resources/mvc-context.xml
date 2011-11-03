@@ -12,7 +12,8 @@
                            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
 
     <!-- Message sources used for Message Bundles providing Localization and messages in views -->
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basenames="com/dynacrongroup/web/messages/messages"/>
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
+          p:basenames="com/dynacrongroup/web/messages/messages"/>
 
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
@@ -39,19 +40,9 @@
 
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
+    <mvc:annotation-driven/>
     <!-- Turns on support for mapping requests to Spring MVC @Controller methods
          Also registers default Formatters and Validators for use across all @Controllers -->
     <mvc:annotation-driven validator="validator" conversion-service="conversionService"/>
-
-    <bean id="messageAdapter" class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-        <property name="messageConverters">
-            <util:list>
-
-                <!-- Support JSON -->
-                <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
-
-            </util:list>
-        </property>
-    </bean>
 
 </beans>
