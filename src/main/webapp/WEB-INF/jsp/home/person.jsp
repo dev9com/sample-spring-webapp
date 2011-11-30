@@ -65,8 +65,9 @@
                 $.ajax({
                     url: '/webapp/ajax/person',
                     dataType: 'json',
-                    type: 'POST',
-                    data: $.toJSON(data),
+                    type: 'GET',
+//                    data: $.toJSON(data),
+                    data:$("#address-form").serialize(),
                     processData:false,
                     contentType:'plain/text',
                     success: addressNameSpace.callback
