@@ -21,7 +21,8 @@
           p:suffix=".jsp"
           p:contentType="utf-8"
           p:rtlFileSuffix="_rtl"
-          p:order="1"/>
+          p:order="1"
+            />
 
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"

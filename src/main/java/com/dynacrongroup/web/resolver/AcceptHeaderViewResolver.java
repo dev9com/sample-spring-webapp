@@ -3,6 +3,7 @@ package com.dynacrongroup.web.resolver;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.io.File;
 import java.util.Locale;
 
 public class AcceptHeaderViewResolver extends InternalResourceViewResolver {
@@ -21,7 +22,18 @@ public class AcceptHeaderViewResolver extends InternalResourceViewResolver {
             adjustedViewName.append(getRtlFileSuffix());
         }
 
-        return super.resolveViewName(adjustedViewName.toString(), locale);
+        String adjustedViewNameString = adjustedViewName.toString();
+
+        String viewFile = getServletContext().getRealPath(this.getPrefix() + adjustedViewNameString + this.getSuffix());
+        File reqFile = new File(viewFile);
+        View foundView;
+        if (!reqFile.exists()) {
+            foundView = null;
+        } else {
+            foundView = super.resolveViewName(adjustedViewNameString, locale);
+        }
+
+        return foundView;
     }
 
     private boolean isRightToLeftLanguage(Locale locale) {

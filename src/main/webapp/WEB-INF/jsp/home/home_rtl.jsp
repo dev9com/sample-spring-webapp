@@ -8,6 +8,8 @@
     <body>
         <h2 dir="rtl"><spring:message code="home.paragraph.header"/></h2>
 
+        <h3>RTL</h3>
+
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae felis libero. Praesent ultrices porttitor magna, sed fringilla metus pharetra vitae. Vestibulum gravida volutpat nunc eu pretium. Donec eget est erat, vitae luctus diam.
             Aliquam laoreet laoreet dui mollis interdum. Donec lobortis, sapien ac bibendum suscipit, turpis nibh laoreet felis, non tempus sem ipsum nec magna. Quisque vehicula, massa in mattis volutpat, elit leo congue metus, eget pellentesque nunc
