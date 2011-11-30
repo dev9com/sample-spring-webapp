@@ -1,0 +1,31 @@
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# IDE Files #
+#############
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# SVN #
+#######
+.svn/
+
+# Maven #
+#########
+target/
+
+# Project Based #
+#################
+*.zip
+*.log
+
+
+# Windows files #
+######################
+Desktop.ini

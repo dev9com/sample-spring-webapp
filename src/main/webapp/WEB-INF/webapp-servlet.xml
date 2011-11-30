@@ -16,10 +16,17 @@
         <context:exclude-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
 
+    <bean id="acceptHeaderViewResolver" class="com.dynacrongroup.web.resolver.AcceptHeaderViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp"
+          p:contentType="utf-8"
+          p:rtlFileSuffix="_rtl"
+          p:order="1"/>
+
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp"
-          p:order="1"
-            />
+          p:contentType="utf-8"
+          p:order="2"/>
 
 </beans>

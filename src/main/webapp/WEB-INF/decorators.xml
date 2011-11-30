@@ -10,6 +10,8 @@
         <pattern>/*</pattern>
     </decorator>
 
+    <decorator name="main-rtl" page="main_rtl.jsp"/>
+
     <decorator name="empty" page="empty.jsp"/>
 
 </decorators>
