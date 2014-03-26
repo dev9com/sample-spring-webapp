@@ -10,8 +10,8 @@
     <url>http://${documentation.server.name}:8080/${project.context.path}</url>
 
     <organization>
-        <name>Dynacron Group</name>
-        <url>http://www.dynacrongroup.com</url>
+        <name>Dev9</name>
+        <url>http://www.dev9.com</url>
     </organization>
 
     <developers>
@@ -19,22 +19,12 @@
         <developer>
             <id>will.iverson</id>
             <name>Will Iverson</name>
-            <email>will.iverson@dynacrongroup.com</email>
+            <email>will.iverson@dev9.com</email>
             <organization>Dynacron Group</organization>
             <roles>
                 <role>CTO</role>
                 <role>Architect</role>
                 <role>Game Designer</role>
-            </roles>
-        </developer>
-
-        <developer>
-            <id>Mike!</id>
-            <name>Mike Ensor</name>
-            <email>mike.ensor@dynacrongroup.com</email>
-            <organization>Dynacron Group</organization>
-            <roles>
-                <role>Lead Java Developer</role>
             </roles>
         </developer>
 
