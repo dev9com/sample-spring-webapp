@@ -35,7 +35,7 @@
 
             <div class="span-24" id="footer">
                 &copy;2012 |
-                <a href="http://www.dynacrongroup.com" target="_blank">Dynacron Group</a> |
+                <a href="http://www.dev9.com" target="_blank">Dev9</a> |
                 <spring:message code="decorator.footer.mikesblog.url" var="blogUrl"/>
                 <spring:message code="decorator.footer.site.url" var="projectUrl"/>
                 <a href="${blogUrl}" target="_blank"><spring:message code="decorator.footer.mikesblog"/></a> |

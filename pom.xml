@@ -20,7 +20,7 @@
             <id>will.iverson</id>
             <name>Will Iverson</name>
             <email>will.iverson@dev9.com</email>
-            <organization>Dynacron Group</organization>
+            <organization>Dev9</organization>
             <roles>
                 <role>CTO</role>
                 <role>Architect</role>
@@ -228,12 +228,12 @@
                 <configuration>
                     <!--<overlays>-->
                     <!--<overlay>-->
-                    <!--<groupId>com.dynacrongroup</groupId>-->
+                    <!--<groupId>com.dev9</groupId>-->
                     <!--<artifactId>deployable-standalone-war-not-to-be-used-as-an-overlay</artifactId>-->
                     <!--<skip>true</skip>-->
                     <!--</overlay>-->
                     <!--<overlay>-->
-                    <!--<groupId>com.dynacrongroup</groupId>-->
+                    <!--<groupId>com.dev9</groupId>-->
                     <!--<artifactId>template-or-other-overlay-as-skinny-war</artifactId>-->
                     <!--<excludes>-->
                     <!--<exclude>WEB-INF/lib/*.jar</exclude>-->
@@ -286,7 +286,7 @@
                                 </properties>
                             </deployable>
                             <!--<deployable>-->
-                            <!--<groupId>com.dynacrongroup</groupId>-->
+                            <!--<groupId>com.dev9</groupId>-->
                             <!--<artifactId>template-or-other-overlay-as-skinny-war</artifactId>-->
                             <!--<type>war</type>-->
                             <!--<properties>-->
@@ -441,13 +441,13 @@
 
         <!-- skinny war overlay Example -->
         <!--<dependency>-->
-        <!--<groupId>com.dynacrongroup</groupId>-->
+        <!--<groupId>com.dev9</groupId>-->
         <!--<artifactId>template-or-other-overlay-as-skinny-war</artifactId>-->
         <!--<version>0.00</version>-->
         <!--<type>war</type>-->
         <!--</dependency>-->
         <!--<dependency>-->
-        <!--<groupId>com.dynacrongroup</groupId>-->
+        <!--<groupId>com.dev9</groupId>-->
         <!--<artifactId>template-or-other-overlay-as-skinny-war</artifactId>-->
         <!--<version>0.00</version>-->
         <!--<type>jar</type>-->

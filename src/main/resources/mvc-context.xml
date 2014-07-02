@@ -13,7 +13,7 @@
 
     <!-- Message sources used for Message Bundles providing Localization and messages in views -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource"
-          p:basenames="classpath:com/dynacrongroup/web/messages/messages"
+          p:basenames="classpath:com/dev9/web/messages/messages"
           p:defaultEncoding="utf-8"
           p:fallbackToSystemLocale="true"/>
 
@@ -21,13 +21,13 @@
         <property name="converters">
             <set>
                 <!-- Converters go here...these are used instead of PropertyEditors, though, need one class for to and from string, kind of a pain...good idea to write a static factory -->
-                <bean class="com.dynacrongroup.web.converter.SimpleDateStringToDateTimeConverter"/>
+                <bean class="com.dev9.web.converter.SimpleDateStringToDateTimeConverter"/>
             </set>
         </property>
     </bean>
 
     <!-- Pickup @Controller annotations -->
-    <context:component-scan base-package="com.dynacrongroup.web">
+    <context:component-scan base-package="com.dev9.web">
         <context:include-filter expression="org.springframework.stereotype.Controller" type="annotation"/>
     </context:component-scan>
 
@@ -37,7 +37,7 @@
     <!-- Spring Interceptors for locale -->
     <mvc:interceptors>
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="locale"/>
-        <bean class="com.dynacrongroup.web.interceptor.SetTimeToRequestInterceptor"/>
+        <bean class="com.dev9.web.interceptor.SetTimeToRequestInterceptor"/>
     </mvc:interceptors>
 
     <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>

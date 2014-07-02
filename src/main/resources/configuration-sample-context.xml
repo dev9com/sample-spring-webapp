@@ -6,6 +6,6 @@
 
     <bean id="restTemplate" class="org.springframework.web.client.RestTemplate" scope="prototype"/>
 
-    <bean id="twitterSearch" class="com.dynacrongroup.service.TwitterSearchImpl"/>
+    <bean id="twitterSearch" class="com.dev9.service.TwitterSearchImpl"/>
 
 </beans>
